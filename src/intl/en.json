@@ -1,0 +1,21 @@
+{
+  "general.start": "Start",
+  "clients.open": "Open clients",
+  "clients.title": "Available clients",
+  "client.title": "Client #{id}",
+  "client.start": "Start client",
+  "client.stop": "Stop client",
+  "bot.start": "Start bot",
+  "bot.pause": "Pause bot",
+  "bot.status.running": "Bot is runnig",
+  "bot.status.idle": "Bot is idle",
+  "bot.stats.health": "Health",
+  "bot.stats.mana": "Mana",
+  "bot.stats.level": "Level",
+  "bot.stats.state": "State",
+  "bot.stats.buffs": "Buffs",
+  "status.running": "Running",
+  "status.idle": "Idle",
+  "class.label": "Class",
+  "route.label": "Route"
+}
