@@ -30,7 +30,7 @@ export const botApi = api.injectEndpoints({
   overrideExisting: overrideExisting(),
   endpoints: (builder) => ({
     getBots: builder.query<Bot[], void>({
-      query: () => 'getBots',
+      queryFn: () => ({ data: [] }),
       async onCacheEntryAdded(_arg, { updateCachedData, cacheDataLoaded, cacheEntryRemoved }) {
         const connection = new HubConnectionBuilder()
           .withUrl(`${import.meta.env.VITE_BASE_URL}/gamestatehub`, { withCredentials: false })
@@ -41,8 +41,9 @@ export const botApi = api.injectEndpoints({
         try {
           await cacheDataLoaded;
 
-          const listener = (message: Bot[]) => {
-            updateCachedData(() => message);
+          const listener = (messages: string[]) => {
+            const botsData: Bot[] = messages.map((message) => JSON.parse(message));
+            updateCachedData(() => botsData);
           };
 
           connection.on('new-state', listener);
