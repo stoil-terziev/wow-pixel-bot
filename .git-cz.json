@@ -1,0 +1,40 @@
+{
+  "disableEmoji": true,
+  "skipScope": true,
+  "list": ["feat", "fix", "test", "refactor", "chore", "docs", "revert", "build"],
+  "format": "{type}",
+  "types": {
+    "feat": {
+      "description": "A new feature",
+      "value": "feat"
+    },
+    "fix": {
+      "description": "A bug fix",
+      "value": "fix"
+    },
+    "docs": {
+      "description": "Documentation only changes",
+      "value": "docs"
+    },
+    "refactor": {
+      "description": "A code change that neither fixes a bug nor adds a feature (formatting, performance improvement, etc.)",
+      "value": "refactor"
+    },
+    "test": {
+      "description": "Adding missing tests or correcting existing tests",
+      "value": "test"
+    },
+    "build": {
+      "description": "Changes that affect the build system or external dependencies (vite, typescript, etc.)",
+      "value": "build"
+    },
+    "chore": {
+      "description": "Other changes that don't modify src or test files",
+      "value": "chore"
+    },
+    "revert": {
+      "description": "Reverts a previous commit",
+      "value": "revert"
+    }
+  }
+}
