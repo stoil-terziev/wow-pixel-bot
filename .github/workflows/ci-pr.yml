@@ -1,0 +1,62 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Pre-Deploy
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on pull request events
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  check-title:
+    name: Validate PR title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate title
+      - uses: deepakputhraya/action-pr-title@master
+        with:
+          regex: '^(?:feat|fix|docs|refactor|test|build|ci|chore|revert): .*'
+          prefix_case_sensitive: true
+          min_length: 5
+          max_length: 80
+          
+  init:
+    name: Init
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Lint
+      - name: Build
+        run: yarn build
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload dist repository
+          path: './build'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+      
+  
+  check_new_dependencies:
+    name: New dependecies check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for new dependencies
+        uses: hiwelo/new-dependencies-action@1.0.1
+        with:
+          token: ${{ github.token }}
