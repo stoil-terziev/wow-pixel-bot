@@ -37,6 +37,10 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install
+      - name: Check for new dependencies
+        uses: hiwelo/new-dependencies-action@1.0.1
+        with:
+          token: ${{ github.token }}
       - name: Check formatting
         run: yarn check-formatting
       - name: Lint
@@ -53,13 +57,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      
-  
-  check_new_dependencies:
-    name: New dependecies check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check for new dependencies
-        uses: hiwelo/new-dependencies-action@1.0.1
-        with:
-          token: ${{ github.token }}
