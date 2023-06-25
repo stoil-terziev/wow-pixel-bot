@@ -10,9 +10,10 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "commit": "git-cz",
-    "format": "prettier --write .",
     "lint": "eslint .",
-    "type-check": "tsc"
+    "format": "prettier --write .",
+    "check-formatting": "prettier --ignore-path .gitignore --check \"./**/*.{ts,js,tsx,jsx,json,md}\"",
+    "check-ts": "tsc"
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
