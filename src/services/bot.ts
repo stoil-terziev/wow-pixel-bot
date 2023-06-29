@@ -2,6 +2,23 @@ import { HubConnectionBuilder } from '@microsoft/signalr';
 import { api } from '../app/api';
 import { overrideExisting } from '../app/utils';
 
+type Activity = 'Idle' | 'Fighting' | 'Eating' | 'Looting' | 'Navigating' | 'Dead';
+
+export type Class =
+  | 'Death Knight'
+  | 'Demon Hunter'
+  | 'Druid'
+  | 'Evoker'
+  | 'Hunter'
+  | 'Mage'
+  | 'Monk'
+  | 'Paladin'
+  | 'Priest'
+  | 'Rogue'
+  | 'Shaman'
+  | 'Warlock'
+  | 'Warrior';
+
 export interface Bot {
   clientId: number;
   isRunning: boolean;
@@ -9,21 +26,8 @@ export interface Bot {
   mana: number;
   level: number;
   buffs: string[];
-  state: string;
-  class:
-    | 'Death Knight'
-    | 'Demon Hunter'
-    | 'Druid'
-    | 'Evoker'
-    | 'Hunter'
-    | 'Mage'
-    | 'Monk'
-    | 'Paladin'
-    | 'Priest'
-    | 'Rogue'
-    | 'Shaman'
-    | 'Warlock'
-    | 'Warrior';
+  activity: Activity;
+  class: Class;
 }
 
 export const botApi = api.injectEndpoints({

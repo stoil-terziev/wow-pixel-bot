@@ -12,7 +12,7 @@
   "bot.stats.health": "Health",
   "bot.stats.mana": "Mana",
   "bot.stats.level": "Level",
-  "bot.stats.state": "State",
+  "bot.stats.activity": "State",
   "bot.stats.buffs": "Buffs",
   "status.running": "Running",
   "status.idle": "Idle",
