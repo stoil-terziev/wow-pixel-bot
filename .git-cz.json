@@ -2,7 +2,6 @@
   "disableEmoji": true,
   "skipScope": true,
   "list": ["feat", "fix", "test", "refactor", "chore", "docs", "revert", "build"],
-  "format": "{type}",
   "types": {
     "feat": {
       "description": "A new feature",

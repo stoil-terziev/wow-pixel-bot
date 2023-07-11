@@ -2,7 +2,7 @@ import { FormattedMessage } from 'react-intl';
 import { createUseStyles } from 'react-jss';
 import { Badge, Button, Card, Form, Select } from 'antd';
 import { Client, useGetRoutesQuery } from '../../services/client';
-import type { Bot } from '../../services/bot';
+import { availableClasses } from '../../constants/classes';
 
 const useStyles = createUseStyles({
   startButton: {
@@ -19,22 +19,6 @@ const useStyles = createUseStyles({
     width: 230,
   },
 });
-
-const availableClasses: Bot['class'][] = [
-  'Death Knight',
-  'Demon Hunter',
-  'Druid',
-  'Evoker',
-  'Hunter',
-  'Mage',
-  'Monk',
-  'Paladin',
-  'Priest',
-  'Rogue',
-  'Shaman',
-  'Warlock',
-  'Warrior',
-];
 
 type Props = Pick<Client, 'id'>;
 

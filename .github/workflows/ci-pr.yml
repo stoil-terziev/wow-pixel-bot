@@ -24,7 +24,7 @@ jobs:
           prefix_case_sensitive: true
           min_length: 5
           max_length: 80
-          
+
   build:
     name: Build
     runs-on: ubuntu-latest
