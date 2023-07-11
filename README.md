@@ -25,7 +25,8 @@ which enforces a standard format for the commit messages.
 ## Contributing
 
 1. Create your own branch with the `main` branch as a source.
-2. Open a pull request when you're ready to merge. The title follows the same naming standard as the commit messages, and enforces the following regex:
+2. Use a prefix based on the purpose of the branch followed by kebab-case explanation, example - `feature/add-cache-invalidation-to-X-endpoint` or `bugfix/fix-bot-cards-not-updating`. Currently the branch names are not enforced and that naming is just a suggestion so branches can be easily found and understood just by looking at the name, but at some point such rule to enforce the naming will be put in place.
+3. Open a pull request when you're ready to merge. The title follows the same naming standard as the commit messages, and enforces the following regex:
 
 ```regex
 ^(?:feat|fix|docs|refactor|test|build|ci|chore|revert): .*
