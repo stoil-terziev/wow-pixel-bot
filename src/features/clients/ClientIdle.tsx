@@ -1,8 +1,8 @@
 import { FormattedMessage } from 'react-intl';
 import { createUseStyles } from 'react-jss';
 import { Badge, Button, Card, Form, Select } from 'antd';
-import { Client, useGetRoutesQuery } from '../../services/client';
 import { availableClasses } from '../../constants/classes';
+import { Client, useGetRoutesQuery } from '../../services/client';
 
 const useStyles = createUseStyles({
   startButton: {

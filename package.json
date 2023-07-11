@@ -11,6 +11,7 @@
     "prepare": "husky install",
     "commit": "git-cz",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "check-formatting": "prettier --ignore-path .gitignore --check \"./**/*.{ts,js,tsx,jsx,json,md}\"",
     "check-ts": "tsc"
@@ -51,7 +52,10 @@
     "vite": "^4.3.9"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": [
+      "prettier --write --ignore-unknown",
+      "eslint ."
+    ]
   },
   "config": {
     "commitizen": {
