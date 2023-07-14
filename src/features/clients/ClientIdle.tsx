@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { Badge, Button, Card, Form, Select } from 'antd';
 import { availableClasses } from '../../constants/classes';
 import { Client, useGetRoutesQuery } from '../../services/client';
+import ClientCardConfig from './ClientsCardConfig/ClientCardConfig';
 
 const useStyles = createUseStyles({
   startButton: {
@@ -16,7 +17,7 @@ const useStyles = createUseStyles({
   },
   card: {
     minHeight: 190,
-    width: 230,
+    width: 320,
   },
 });
 
@@ -64,6 +65,9 @@ const ClientIdle = ({ id }: Props): JSX.Element => {
                 </Select.Option>
               ))}
             </Select>
+          </Form.Item>
+          <Form.Item>
+            <ClientCardConfig />
           </Form.Item>
           <Form.Item className={classes.form}>
             <Button block htmlType="submit" className={classes.startButton}>
