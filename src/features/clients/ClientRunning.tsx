@@ -2,6 +2,7 @@ import { FormattedMessage } from 'react-intl';
 import { createUseStyles } from 'react-jss';
 import { Badge, Button, Card, Space } from 'antd';
 import { useGetBotsQuery } from '../../services/bot';
+import ClientCardConfig from './ClientsCardConfig/ClientCardConfig';
 import type { Client } from '../../services/client';
 
 const useStyles = createUseStyles({
@@ -11,7 +12,7 @@ const useStyles = createUseStyles({
   },
   card: {
     minHeight: 190,
-    width: 230,
+    width: 320,
   },
   botStatus: {
     marginBottom: 25,
@@ -34,6 +35,7 @@ const ClientRunning = ({ id }: Props): JSX.Element => {
           ) : (
             <Badge status="error" text={<FormattedMessage id="bot.status.idle" />} className={classes.botStatus} />
           )}
+          <ClientCardConfig />
           <Button block>
             {clientBot?.isRunning ? <FormattedMessage id="bot.pause" /> : <FormattedMessage id="bot.start" />}
           </Button>
